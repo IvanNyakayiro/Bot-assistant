@@ -12,19 +12,10 @@ bot.on("ready", async() =>{
 });
 
 bot.on("message", (message) =>{
-	if(message.content.startsWith("!ping")){
-		message.channel.send("pong!");
-	}
-	if(message.content.startsWith("!hello")){
-		message.channel.send("Hello!");
-	}
-	if(message.content.startsWith("!hey")){
-		message.channel.send("hey!");
-	}
-	if(message.content.startsWith("!help")){
-		message.channel.send("How can I help!");
-	}
-
+	if(botconfig[message.content]) {
+    message.channel.send(botconfig[message.content]);
+  }
+	//Add..More...
 });
 
 bot.on("guildMemberAdd", (member) =>{
